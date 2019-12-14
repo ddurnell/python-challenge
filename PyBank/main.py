@@ -53,8 +53,20 @@ with open(data_path, newline='') as csvfile:
             big_decrease = change
             big_decrease_date = row[0]
 
-    print(f"Total Months: {months}")
-    print(f"Total: {locale.currency(total)}")
-    print(f"Average Change: {locale.currency(total_change/(months-1))}")
-    print(f"Greatest Increase in Profits: {big_increase_date}: {locale.currency(big_increase)}")
-    print(f"Greatest Decrease in Profits: {big_decrease_date}: {locale.currency(big_decrease)}")
+    results = []
+    results.append(f"Total Months: {months}")
+    results.append(f"Total: {locale.currency(total)}")
+    results.append(f"Average Change: {locale.currency(total_change/(months-1))}")
+    results.append(f"Greatest Increase in Profits: {big_increase_date}: {locale.currency(big_increase)}")
+    results.append(f"Greatest Decrease in Profits: {big_decrease_date}: {locale.currency(big_decrease)}")
+
+    results_file = 'results.txt'
+    try:
+        f = open(results_file, 'w')
+        for result in results:
+            print(result)
+            f.write(result + '\n')
+    finally:
+        f.close()
+
+   
