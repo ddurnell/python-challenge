@@ -50,9 +50,6 @@ with open(data_path, newline='') as csvfile:
             candidates[candidate] = 1
         count +=1
 
-    #print(candidates)
-    #print(count)
-
     candidate_list = []
     candidate_percent = []
     candidate_count = []
@@ -72,11 +69,6 @@ with open(data_path, newline='') as csvfile:
             winner = x
             #print(x)
         i = i+1
-
-    #print(f"total is {count_test} and votes is {count}")
-    #print(candidate_list)
-    #print(candidate_percent)
-    #print(candidate_count)
 
 def output_results(candidate_list, candidate_percent, candidate_count):
         
@@ -102,17 +94,4 @@ def output_results(candidate_list, candidate_percent, candidate_count):
 #   -------------------------
 #   Winner: Khan
 
-results_filename = 'results.txt'
 output_results(candidate_list, candidate_percent, candidate_count)
-
-# print("Election Results")
-# print("-------------------------")
-# print(f"Total Votes: {count}")
-# print("-------------------------")
-# j = 0
-# for c in candidate_list:
-#     print(f"{c}: {candidate_percent[j]:.3%} ({candidate_count[j]})")
-#     j = j+1
-# print("-------------------------")
-# print(f"Winner: {winner}")
-
